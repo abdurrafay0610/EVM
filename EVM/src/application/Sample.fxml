@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="application.controller">
+   <top>
+      <Pane prefHeight="510.0" prefWidth="414.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="187.0" layoutY="243.0" mnemonicParsing="false" onAction="#up" text="Start" />
+         </children>
+      </Pane>
+   </top>
+</BorderPane>
