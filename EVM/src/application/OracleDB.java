@@ -21,25 +21,30 @@ public class OracleDB extends PersistanceManager
 			System.out.println("Connection Established");
 			
 			//creating schema
-			/*
+			
 			Statement stmt = con.createStatement();
-
-			ResultSet rs=stmt.executeQuery("CREATE TABLE checking(id NUMBER PRIMARY KEY,balance NUMBER,datte VARCHAR(30))");
-			rs=stmt.executeQuery("CREATE TABLE saving(id NUMBER PRIMARY KEY,balance NUMBER,datte VARCHAR(30))");
-			*/
+			ResultSet rs=stmt.executeQuery("CREATE TABLE voter(CNIC NUMBER PRIMARY KEY,name VARCHAR(30),age NUMBER,done NUMBER)");
+			rs = stmt.executeQuery("CREATE TABLE party(id NUMBER,name VARCHAR(30),votes NUMBER)");
+			
+		//	rs = stmt.executeQuery("INSERT INTO party(1,");
+			
 		}
 		catch(SQLException e)
 		{
 			System.out.println("Connection not established");
 		}
 	}
-	public void test() throws SQLException
+	public void addVoter(int CNIC,String name,int age,int done) throws SQLException
 	{
 		try
 		{
-			String sql = "INSERT INTO DEMO (ID) VALUES (?)";
+			String sql = "INSERT INTO VOTER (CNIC,NAME,AGE,NUMBER) VALUES (?,?,?,?)";
 			PreparedStatement statement = con.prepareStatement(sql);
-			statement.setInt(1, 4);
+			statement.setInt(1, CNIC);
+			statement.setString(2, name);
+			statement.setInt(3, age);
+			statement.setInt(4, done);
+			
 			
 			int rowsInserted = statement.executeUpdate();
 			
